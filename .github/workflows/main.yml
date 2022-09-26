@@ -4,7 +4,7 @@ on:
 
 jobs:
     docker_build_job:
-            uses: atolycs/ghaction-test_repobuild/.github/actions/action.yml@build_workflow
+            uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@build_workflow
 #            with:
 #                branch_name: ${{ github.ref_name }}
     artifact_uploads:
