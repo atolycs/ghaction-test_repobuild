@@ -17,7 +17,7 @@ jobs:
                 path: .github/actions/build_workflow
 
           - name: Run Continaer
-            uses: ./.github/actions/build_workflow/.github/workflows
+            uses: ./.github/actions/build_workflow/.github/workflows/main.yml
                id: makepkg-container
 
           - name: Upload Artifacts
