@@ -6,19 +6,5 @@ jobs:
             - uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@build_workflow
 
     artifact_uploads:
-        runs-on: ubuntu-22.04
-        needs: docker_build_job
-        name: Pushing
-        steps:
-          - name: Clone Repo 
-            uses: actions/checkout@v3
-            with:
-              repository: ardentteams/ardent-repos
-              path: repos
-              ref: gh-pages
-          - name: Download Artifacts
-            uses: actions/download-artifact@v3
-            with:
-                name: artifact_package
-          - name: Check download files
-            run: ls -R
+            - uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@upload_repo
+
