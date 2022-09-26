@@ -1,5 +1,4 @@
 name: 'Build container'
-
 runs:
     using: 'docker'
     image: 'Dockerfile'

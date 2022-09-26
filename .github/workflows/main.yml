@@ -10,6 +10,9 @@ jobs:
         runs-on: ubuntu-22.04
         name: Setup Container
         steps:
+          - name: Build Container
+            uses: /
+
           - name: Upload Artifacts
             uses: actions/upload-artifact@v3
             with:
