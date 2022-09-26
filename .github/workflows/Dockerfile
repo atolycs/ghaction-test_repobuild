@@ -15,5 +15,5 @@ USER build
 WORKDIR /build
 
 COPY entrypoint.sh /entrypoint.sh
-COPY makepkg_custom.conf /etc/makepkg.conf
+#COPY makepkg_custom.conf /etc/makepkg.conf
 ENTRYPOINT ["/entrypoint.sh"]
