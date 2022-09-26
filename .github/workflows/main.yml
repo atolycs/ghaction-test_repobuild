@@ -4,9 +4,6 @@ on:
             artifact_name:
                 require: true
                 type: string
-            name: 
-                require: true
-                type: string
 
 jobs:
     artifact_uploads:
