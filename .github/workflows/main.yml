@@ -1,24 +1,14 @@
 on:
-   push:
+    workflow_call:
+        inputs:
+            artifact_name:
+                require: true
+                type: string
+            name: 
+                require: true
+                type: string
 
 jobs:
-    docker_build_job:
-        runs-on: ubuntu-22.04
-        name: Setup Container
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v3
-          
-          - name: Run Continaer
-            uses: ./.github/workflows/
-            id: makepkg-container
-
-          - name: Upload Artifacts
-            uses: actions/upload-artifact@v3
-            with:
-             name: artifact_package
-             path: "*.pkg.tar.zst"
-
     artifact_uploads:
         runs-on: ubuntu-22.04
         needs: docker_build_job
@@ -33,6 +23,6 @@ jobs:
           - name: Download Artifacts
             uses: actions/download-artifact@v3
             with:
-                name: artifact_package
+                name: ${{ inputs.artifact_name }}
           - name: Check download files
             run: ls -R
