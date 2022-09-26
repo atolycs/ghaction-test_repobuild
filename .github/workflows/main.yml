@@ -1,10 +1,13 @@
 on:
    push:
+   workflow_dispatch:
 
 jobs:
     docker_build_job:
-            - uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@build_workflow
-
+            uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@build_workflow
+            with:
+                branch_name: ${{ github.ref_name }}
     artifact_uploads:
-            - uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@upload_repo
-
+            uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@upload_repo
+            with:
+                artifact_name: "artifact_package"
