@@ -1,6 +1,6 @@
 on:
    push:
-
+   workflow_dispatch:
 
 jobs:
     docker_build_job:
