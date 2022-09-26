@@ -12,8 +12,7 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v3
-                repository: ${{ inputs.name }}
-
+          
           - name: Run Continaer
             uses: ./.github/workflows/
             id: makepkg-container
