@@ -11,7 +11,7 @@ jobs:
         name: Setup Container
         steps:
           - name: Build Container
-            uses: /
+            uses: ./.github/actions/action.yml
 
           - name: Upload Artifacts
             uses: actions/upload-artifact@v3
