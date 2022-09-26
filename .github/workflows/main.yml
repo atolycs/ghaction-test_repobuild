@@ -12,9 +12,6 @@ jobs:
         steps:
           - name: Checkout
             uses: actions/checkout@v3
-            with:
-                ref: ${{ inputs.branch_name }}
-          
           - name: Run Continaer
             uses: ./.github/workflows/
             id: makepkg-container
