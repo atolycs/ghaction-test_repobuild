@@ -2,7 +2,7 @@ on:
     workflow_call:
         inputs:
             branch_name:
-                require: true
+                required: true
                 type: string
 
 jobs:
