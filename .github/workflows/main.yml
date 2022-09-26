@@ -6,9 +6,9 @@ jobs:
     docker_build_job:
             uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@build_workflow
             with:
-                inputs: ${{ github.repository }}
+                branch_name: ${{ github.ref_name }}
     artifact_uploads:
             uses: atolycs/ghaction-test_repobuild/.github/workflows/main.yml@upload_repo
             with:
-                inputs: ${{ github.repository }}
+                artifact_name: "artifact_package"
 
