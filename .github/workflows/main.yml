@@ -14,10 +14,12 @@ jobs:
             uses: actions/checkout@v3
             with:
                 ref: build_workflow
-                path: ./.github/workflows
+                path: .github/actions/build_workflow
+
           - name: Run Continaer
-            uses: ./.github/workflows/
-            id: makepkg-container
+            uses: ./.github/actions/build_workflow/.github/workflows/
+               id: makepkg-container
+
           - name: Upload Artifacts
             uses: actions/upload-artifact@v3
             with:
